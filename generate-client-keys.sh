@@ -11,7 +11,7 @@ cd /home/client
 openssl genrsa -out key.pem 2048
 
 # Generate a certificate from our private key.
-openssl req -new -key key.pem -out req.pem -outform PEM -subj /CN=172.217.7.142/O=client/ -nodes
+openssl req -new -key key.pem -out req.pem -outform PEM -subj /CN=$(hostname)/O=client/ -nodes
 
 # Sign the certificate with our CA.
 cd /home/testca
