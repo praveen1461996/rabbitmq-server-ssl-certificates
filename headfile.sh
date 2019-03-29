@@ -4,6 +4,8 @@
 sudo apt-get install openssl -y
 
 #locations for our certificates
+sudo mkdir -p /home/testca
+sudo cp openssl.cnf /home/testca
 sudo mkdir -p /home/testca/certs
 sudo mkdir -p /home/testca/private
 sudo mkdir -p /home/server
@@ -21,12 +23,15 @@ sudo touch /home/testca/index.txt.attr
 sudo chmod +x /home/prepare-server.sh /home/generate-client-keys.sh rabbitmq.sh
 
 #preparing server certificates
-./prepare-server.sh
+sudo cp prepare-server.sh /home
+/home/prepare-server.sh 
 
 #preparing client certificats
+sudo cp generate-client-keys.sh /home
 /home/generate-client-keys.sh
 
 #installing rabbitmq
+sudo cp rabbitmq.sh /home
 /home/rabbitmq.sh
 
 #deploying configuration file 
