@@ -35,7 +35,8 @@ sudo cp rabbitmq.sh /home
 /home/rabbitmq.sh
 
 #deploying configuration file 
-cp /home/rabbitmq.config /etc/rabbitmq/rabbitmq.config
+
+cp rabbitmq.config /etc/rabbitmq/rabbitmq.config
 
 #restarting the server
 sudo systemctl restart rabbitmq-server
