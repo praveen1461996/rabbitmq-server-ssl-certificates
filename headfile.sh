@@ -15,23 +15,30 @@ sudo mkdir -p /home/client
 sudo chmod 700 /home/testca/private
 
 
-echo 01 > /home/testca/serial
+sudo tee /home/testca/serial << EOF
+01
+EOF
+
 sudo touch /home/testca/index.txt
 sudo touch /home/testca/index.txt.attr
 
+sudo cp prepare-server.sh /home
+sudo cp generate-client-keys.sh /home
+sudo cp rabbitmq.sh /home
+sudo cp openssl.cnf /home/testca
 #changing scripts permissions to exec mode 
-sudo chmod +x /home/prepare-server.sh /home/generate-client-keys.sh rabbitmq.sh
+sudo chmod +x /home/prepare-server.sh /home/generate-client-keys.sh /home/rabbitmq.sh
 
 #preparing server certificates
-sudo cp prepare-server.sh /home
+
 /home/prepare-server.sh 
 
 #preparing client certificats
-sudo cp generate-client-keys.sh /home
+
 /home/generate-client-keys.sh
 
 #installing rabbitmq
-sudo cp rabbitmq.sh /home
+
 /home/rabbitmq.sh
 
 #deploying configuration file 
