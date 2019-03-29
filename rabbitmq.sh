@@ -47,7 +47,6 @@ sudo apt-get install rabbitmq-server -y
 
 sudo service rabbitmq-server start
 
-sudo service rabbitmq-server status
 
 #enabling UI plugin
 sudo rabbitmq-plugins enable rabbitmq_management
