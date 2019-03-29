@@ -24,10 +24,10 @@ sudo apt-get install erlang-nox -y
 #Erlang Version and Repository Pinning
 sudo apt-get update
 sudo tee /etc/apt/preferences.d/erlang << EOF
-"#/etc/apt/preferences.d/erlang
+#/etc/apt/preferences.d/erlang
 Package: erlang*
 Pin: release o=Bintray
-Pin-Priority: 1000"
+Pin-Priority: 1000
 EOF
 
 #rabbitmq Source List File
