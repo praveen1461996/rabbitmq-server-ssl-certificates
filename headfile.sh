@@ -4,21 +4,21 @@
 sudo apt-get install openssl -y
 
 #locations for our certificates
-mkdir -p /home/testca/certs
-mkdir -p /home/testca/private
-mkdir -p /home/server
-mkdir -p /home/client
+sudo mkdir -p /home/testca/certs
+sudo mkdir -p /home/testca/private
+sudo mkdir -p /home/server
+sudo mkdir -p /home/client
 
 #making private foulder secure
-chmod 700 /home/testca/private
+sudo chmod 700 /home/testca/private
 
 
-echo 01 > /home/testca/serial
-touch /home/testca/index.txt
-touch /home/testca/index.txt.attr
+sudo echo 01 > /home/testca/serial
+sudo touch /home/testca/index.txt
+sudo touch /home/testca/index.txt.attr
 
 #changing scripts permissions to exec mode 
-chmod +x /home/prepare-server.sh /home/generate-client-keys.sh rabbitmq.sh
+sudo chmod +x /home/prepare-server.sh /home/generate-client-keys.sh rabbitmq.sh
 
 #preparing server certificates
 /home/prepare-server.sh
