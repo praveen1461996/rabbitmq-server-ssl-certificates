@@ -13,7 +13,7 @@ sudo mkdir -p /home/client
 sudo chmod 700 /home/testca/private
 
 
-sudo echo 01 > /home/testca/serial
+echo 01 > /home/testca/serial
 sudo touch /home/testca/index.txt
 sudo touch /home/testca/index.txt.attr
 
@@ -21,7 +21,7 @@ sudo touch /home/testca/index.txt.attr
 sudo chmod +x /home/prepare-server.sh /home/generate-client-keys.sh rabbitmq.sh
 
 #preparing server certificates
-/home/prepare-server.sh
+./prepare-server.sh
 
 #preparing client certificats
 /home/generate-client-keys.sh
