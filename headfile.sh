@@ -21,16 +21,16 @@ touch /home/testca/index.txt.attr
 chmod +x /home/prepare-server.sh /home/generate-client-keys.sh rabbitmq.sh
 
 #preparing server certificates
-./prepare-server.sh
+/home/prepare-server.sh
 
 #preparing client certificats
-./generate-client-keys.sh
+/home/generate-client-keys.sh
 
 #installing rabbitmq
-./rabbitmq.sh
+/home/rabbitmq.sh
 
 #deploying configuration file 
-cp rabbitmq.config /etc/rabbitmq/rabbitmq.config
+cp /home/rabbitmq.config /etc/rabbitmq/rabbitmq.config
 
 #restarting the server
 sudo systemctl restart rabbitmq-server
