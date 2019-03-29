@@ -40,3 +40,4 @@ cp rabbitmq.config /etc/rabbitmq/rabbitmq.config
 
 #restarting the server
 sudo systemctl restart rabbitmq-server
+sudo systemctl status rabbitmq-server
